@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">BlockGains</string>
+    <string name="upload_title">Upload Transaction Files</string>
+    <string name="upload_description">Upload CSV files containing your buy and sell transactions to calculate capital gains</string>
+    <string name="buy_transactions">Buy Transactions</string>
+    <string name="sell_transactions">Sell Transactions</string>
+    <string name="calculate_button">Calculate Capital Gains</string>
+    <string name="choose_file">Choose File</string>
+    <string name="change_file">Change File</string>
+    <string name="selected_file">Selected: %1$s</string>
+    <string name="capital_gains_report">Capital Gains Report</string>
+    <string name="tax_year">Tax Year: %1$d</string>
+    <string name="total_capital_gain">Total Capital Gain</string>
+    <string name="total_capital_loss">Total Capital Loss</string>
+    <string name="short_term">Short-Term</string>
+    <string name="long_term">Long-Term</string>
+    <string name="taxable_events">Taxable Events (%1$d)</string>
+    <string name="error_title">Error</string>
+    <string name="loading">Loading...</string>
+</resources>

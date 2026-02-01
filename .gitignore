@@ -3,7 +3,7 @@
 build/
 
 # Local configuration file (sdk path, etc)
-local.properties
+/local.properties
 
 # Log/OS Files
 *.log
@@ -22,6 +22,7 @@ output-metadata.json
 misc.xml
 deploymentTargetDropDown.xml
 render.experimental.xml
+.DS_Store
 
 # Keystore files
 *.jks
