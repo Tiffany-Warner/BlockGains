@@ -14,14 +14,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.tiffles.blockgains.ui.viewmodel.DashboardUiState
+import com.tiffles.blockgains.ui.viewmodel.DashboardViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun CsvUploadScreen(
+    viewModel: DashboardViewModel,
     onFilesSelected: (buysUri: Uri, sellsUri: Uri) -> Unit
 ) {
     var buysUri by remember { mutableStateOf<Uri?>(null) }
     var sellsUri by remember { mutableStateOf<Uri?>(null) }
+    
+    val uiState by viewModel.uiState.collectAsState()
+    val snackbarHostState = remember { SnackbarHostState() }
 
     val buysLauncher = rememberLauncherForActivityResult(
         contract = ActivityResultContracts.GetContent()
@@ -34,6 +40,15 @@ fun CsvUploadScreen(
     ) { uri: Uri? ->
         sellsUri = uri
     }
+    
+    LaunchedEffect(uiState) {
+        if (uiState is DashboardUiState.Error) {
+            snackbarHostState.showSnackbar(
+                message = (uiState as DashboardUiState.Error).message,
+                duration = SnackbarDuration.Long
+            )
+        }
+    }
 
     Scaffold(
         topBar = {
@@ -44,7 +59,8 @@ fun CsvUploadScreen(
                     titleContentColor = MaterialTheme.colorScheme.onPrimaryContainer
                 )
             )
-        }
+        },
+        snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
         Column(
             modifier = Modifier

@@ -58,12 +58,14 @@ fun DashboardScreen(
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
+
                 is DashboardUiState.Error -> {
                     ErrorContent(
                         message = uiState.message,
                         modifier = Modifier.align(Alignment.Center)
                     )
                 }
+
                 is DashboardUiState.Success -> {
                     val summary = uiState.yearSummaries[uiState.selectedYear]
                     if (summary != null) {
@@ -240,7 +242,7 @@ fun GainLossCard(
     val textColor = when {
         isTotal && isGain -> MaterialTheme.colorScheme.onPrimaryContainer
         isTotal && !isGain -> MaterialTheme.colorScheme.onErrorContainer
-        else -> if (isGain) Color(0xFF1B5E20) else Color(0xFFB71C1C)
+        else -> if (isGain) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
     }
 
     Card(
@@ -300,7 +302,7 @@ fun TaxableEventCard(event: TaxableEvent) {
                     text = event.gain.toCurrency(),
                     style = MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
-                    color = if (isGain) Color(0xFF1B5E20) else Color(0xFFB71C1C)
+                    color = if (isGain) MaterialTheme.colorScheme.onPrimaryContainer else MaterialTheme.colorScheme.onErrorContainer
                 )
             }
 

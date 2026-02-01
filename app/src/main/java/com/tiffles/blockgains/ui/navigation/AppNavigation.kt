@@ -21,6 +21,7 @@ fun AppNavigation() {
     when (currentScreen) {
         is Screen.Upload -> {
             CsvUploadScreen(
+                viewModel = dashboardViewModel,
                 onFilesSelected = { buysUri, sellsUri ->
                     dashboardViewModel.loadCsvFiles(context, buysUri, sellsUri)
                     currentScreen = Screen.Dashboard
