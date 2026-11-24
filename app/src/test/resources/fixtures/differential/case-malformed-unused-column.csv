@@ -1,0 +1,7 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-10,FAKEA,CRYPTO,FAKE-WALLET-1,2,100.00,,,,,,,,,,
+BUY,2023-02-10,FAKEA,CRYPTO,FAKE-WALLET-1,1,120.00,,,,,,,,2023-13-45,,bad acquired_date on a BUY: rejected
+BUY,2023-03-10,FAKEA,CRYPTO,FAKE-WALLET-1,1,130.00,,,,,,abc,,,,bad to_quantity on a BUY: rejected
+SELL,2023-04-10,FAKEA,CRYPTO,FAKE-WALLET-1,1,150.00,,,,,,"1,5",,,,badly grouped to_quantity on a SELL: rejected
+BUY,2023-05-10,FAKEA,CRYPTO,FAKE-WALLET-1,1,140.00,,,,,,7,FAKE-WALLET-2,2020-01-01,,valid unused values: ignored
+SELL,2024-06-10,FAKEA,CRYPTO,FAKE-WALLET-1,3,200.00,,,,,,,,,,

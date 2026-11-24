@@ -1,0 +1,5 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2024-03-01,FAKEA,CRYPTO,FAKE-WALLET-1,1,100.00,,,,,FAKEB,,,,,stray to_asset on a BUY: not history for FAKEB
+OPENING,2025-01-01,FAKEA,CRYPTO,FAKE-WALLET-1,1,100.00,,,,,,,,2024-03-01,,
+OPENING,2025-01-01,FAKEB,CRYPTO,FAKE-WALLET-1,5,10.00,,,,,,,,2024-03-01,,
+SELL,2025-06-01,FAKEB,CRYPTO,FAKE-WALLET-1,5,12.00,,,,,,,,,,

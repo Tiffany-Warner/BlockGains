@@ -1,0 +1,5 @@
+# Test fixtures check out byte-exact (LF) on every OS, so tests that compare files don't depend on core.autocrlf.
+app/src/test/resources/**/*.csv text eol=lf
+app/src/test/resources/**/*.json text eol=lf
+tools/reference_calc/testdata/**/*.csv text eol=lf
+tools/reference_calc/testdata/**/*.json text eol=lf

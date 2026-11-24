@@ -1,0 +1,113 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2023": {
+      "short_term": {
+        "proceeds": "250.00",
+        "basis": "201.50",
+        "gain": "48.50",
+        "count": 1
+      },
+      "long_term": {
+        "proceeds": "0.00",
+        "basis": "0.00",
+        "gain": "0.00",
+        "count": 0
+      },
+      "net_gain": "48.50",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    },
+    "2025": {
+      "short_term": {
+        "proceeds": "0.00",
+        "basis": "0.00",
+        "gain": "0.00",
+        "count": 0
+      },
+      "long_term": {
+        "proceeds": "241.50",
+        "basis": "240.00",
+        "gain": "1.50",
+        "count": 2
+      },
+      "net_gain": "1.50",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    }
+  },
+  "events": [
+    {
+      "line": 3,
+      "lot_line": 2,
+      "kind": "disposal",
+      "asset": "FAKEB",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "2",
+      "acquired": "2023-01-10",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2023-03-01",
+      "term": "ST",
+      "proceeds": "250.00",
+      "basis": "201.50",
+      "gain": "48.50"
+    },
+    {
+      "line": 6,
+      "lot_line": 5,
+      "kind": "disposal",
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-EXCHANGE-1",
+      "scope": "wallet",
+      "quantity": "90",
+      "acquired": "2023-03-01",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-04-01",
+      "term": "LT",
+      "proceeds": "90.00",
+      "basis": "90.00",
+      "gain": "0.00"
+    },
+    {
+      "line": 7,
+      "lot_line": 4,
+      "kind": "disposal",
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "wallet",
+      "quantity": "150",
+      "acquired": "2023-03-01",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-05-01",
+      "term": "LT",
+      "proceeds": "151.50",
+      "basis": "150.00",
+      "gain": "1.50"
+    }
+  ],
+  "income": [],
+  "remaining_lots": [],
+  "adjusted_away_basis": "0.00",
+  "issues": [
+    {
+      "kind": "TransitionMismatch",
+      "line": null,
+      "date": "2025-01-01",
+      "asset": "FAKEUSD",
+      "wallet": null,
+      "expected": "250",
+      "opening": "240"
+    }
+  ]
+}

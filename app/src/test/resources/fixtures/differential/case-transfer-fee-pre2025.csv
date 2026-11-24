@@ -1,0 +1,7 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-01,FAKEB,CRYPTO,FAKE-WALLET-1,0.004,1000.00,,,,,,,,,,
+BUY,2023-11-01,FAKEB,CRYPTO,FAKE-WALLET-1,1,2000.00,,,,,,,,,,
+BUY,2023-01-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,100,1.00,,,,,,,,,,
+TRANSFER,2024-03-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,100,,,15.00,FAKEB,0.005,,,FAKE-EXCHANGE-1,,,T14
+TRANSFER,2024-05-01,FAKEB,CRYPTO,FAKE-WALLET-1,0.49,,,22.00,,0.01,,,FAKE-WALLET-2,,,move ignored before 2025; fee counts
+SELL,2025-02-01,FAKEB,CRYPTO,FAKE-WALLET-1,0.5,3000.00,,,,,,,,,,default wallet after the transition

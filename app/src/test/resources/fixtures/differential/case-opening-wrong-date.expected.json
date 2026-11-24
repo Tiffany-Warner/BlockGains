@@ -1,0 +1,110 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2025": {
+      "short_term": {
+        "proceeds": "2100.00",
+        "basis": "0.00",
+        "gain": "2100.00",
+        "count": 1
+      },
+      "long_term": {
+        "proceeds": "3995.00",
+        "basis": "2000.00",
+        "gain": "1995.00",
+        "count": 1
+      },
+      "net_gain": "4095.00",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    }
+  },
+  "events": [
+    {
+      "line": 6,
+      "lot_line": 2,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "wallet",
+      "quantity": "2",
+      "acquired": "2022-06-01",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-03-01",
+      "term": "LT",
+      "proceeds": "3995.00",
+      "basis": "2000.00",
+      "gain": "1995.00"
+    },
+    {
+      "line": 7,
+      "lot_line": null,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-EXCHANGE-1",
+      "scope": "wallet",
+      "quantity": "1",
+      "acquired": null,
+      "unmatched": true,
+      "basis_unknown": true,
+      "disposed": "2025-06-01",
+      "term": "ST",
+      "proceeds": "2100.00",
+      "basis": "0.00",
+      "gain": "2100.00"
+    }
+  ],
+  "income": [],
+  "remaining_lots": [
+    {
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "quantity": "1",
+      "basis": "1000.00",
+      "acquired": "2022-06-01",
+      "basis_unknown": false
+    },
+    {
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "quantity": "1",
+      "basis": "1500.00",
+      "acquired": "2023-08-15",
+      "basis_unknown": false
+    }
+  ],
+  "adjusted_away_basis": "0.00",
+  "issues": [
+    {
+      "kind": "InvalidRow",
+      "line": 4,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "OPENING must be dated 2025-01-01"
+    },
+    {
+      "kind": "InvalidRow",
+      "line": 5,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "OPENING acquired_date can't be after the transition"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 7,
+      "date": "2025-06-01",
+      "asset": "FAKEA",
+      "wallet": "FAKE-EXCHANGE-1",
+      "short_by": "1"
+    }
+  ]
+}

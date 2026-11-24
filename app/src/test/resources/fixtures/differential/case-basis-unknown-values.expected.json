@@ -1,0 +1,159 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2024": {
+      "short_term": {
+        "proceeds": "0.00",
+        "basis": "0.00",
+        "gain": "0.00",
+        "count": 0
+      },
+      "long_term": {
+        "proceeds": "60.00",
+        "basis": "0.00",
+        "gain": "60.00",
+        "count": 6
+      },
+      "net_gain": "60.00",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    }
+  },
+  "events": [
+    {
+      "line": 9,
+      "lot_line": 2,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1",
+      "acquired": "2023-01-10",
+      "unmatched": false,
+      "basis_unknown": true,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "10.00",
+      "basis": "0.00",
+      "gain": "10.00"
+    },
+    {
+      "line": 9,
+      "lot_line": 3,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1",
+      "acquired": "2023-01-11",
+      "unmatched": false,
+      "basis_unknown": true,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "10.00",
+      "basis": "0.00",
+      "gain": "10.00"
+    },
+    {
+      "line": 9,
+      "lot_line": 4,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1",
+      "acquired": "2023-01-12",
+      "unmatched": false,
+      "basis_unknown": true,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "10.00",
+      "basis": "0.00",
+      "gain": "10.00"
+    },
+    {
+      "line": 9,
+      "lot_line": 5,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1",
+      "acquired": "2023-01-13",
+      "unmatched": false,
+      "basis_unknown": true,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "10.00",
+      "basis": "0.00",
+      "gain": "10.00"
+    },
+    {
+      "line": 9,
+      "lot_line": 6,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1",
+      "acquired": "2023-01-14",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "10.00",
+      "basis": "0.00",
+      "gain": "10.00"
+    },
+    {
+      "line": 9,
+      "lot_line": 7,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1",
+      "acquired": "2023-01-15",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "10.00",
+      "basis": "0.00",
+      "gain": "10.00"
+    }
+  ],
+  "income": [],
+  "remaining_lots": [],
+  "adjusted_away_basis": "0.00",
+  "issues": [
+    {
+      "kind": "InvalidRow",
+      "line": 8,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "unrecognized basis_unknown 'maybe'"
+    },
+    {
+      "kind": "ZeroPriceBuy",
+      "line": 6,
+      "date": "2023-01-14",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1"
+    },
+    {
+      "kind": "ZeroPriceBuy",
+      "line": 7,
+      "date": "2023-01-15",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1"
+    }
+  ]
+}

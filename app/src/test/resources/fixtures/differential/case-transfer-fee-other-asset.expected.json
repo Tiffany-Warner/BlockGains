@@ -1,0 +1,153 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2025": {
+      "short_term": {
+        "proceeds": "506.40",
+        "basis": "250.90",
+        "gain": "255.50",
+        "count": 4
+      },
+      "long_term": {
+        "proceeds": "0.00",
+        "basis": "0.00",
+        "gain": "0.00",
+        "count": 0
+      },
+      "net_gain": "255.50",
+      "loss_limit_note": false,
+      "ordinary_income": "64.00",
+      "income_count": 1
+    }
+  },
+  "events": [
+    {
+      "line": 4,
+      "lot_line": 2,
+      "kind": "transfer_fee",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "wallet",
+      "quantity": "0.0001",
+      "acquired": "2024-03-05",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-03-01",
+      "term": "ST",
+      "proceeds": "6.40",
+      "basis": "0.90",
+      "gain": "5.50"
+    },
+    {
+      "line": 6,
+      "lot_line": null,
+      "kind": "transfer_fee",
+      "asset": "FAKEA",
+      "wallet": "FAKE-EXCHANGE-1",
+      "scope": "wallet",
+      "quantity": "0.00001",
+      "acquired": null,
+      "unmatched": true,
+      "basis_unknown": true,
+      "disposed": "2025-04-20",
+      "term": "ST",
+      "proceeds": "0.00",
+      "basis": "0.00",
+      "gain": "0.00"
+    },
+    {
+      "line": 7,
+      "lot_line": 3,
+      "kind": "disposal",
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-EXCHANGE-1",
+      "scope": "wallet",
+      "quantity": "250",
+      "acquired": "2024-08-01",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-05-01",
+      "term": "ST",
+      "proceeds": "250.00",
+      "basis": "250.00",
+      "gain": "0.00"
+    },
+    {
+      "line": 7,
+      "lot_line": null,
+      "kind": "disposal",
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-EXCHANGE-1",
+      "scope": "wallet",
+      "quantity": "250",
+      "acquired": null,
+      "unmatched": true,
+      "basis_unknown": true,
+      "disposed": "2025-05-01",
+      "term": "ST",
+      "proceeds": "250.00",
+      "basis": "0.00",
+      "gain": "250.00"
+    }
+  ],
+  "income": [
+    {
+      "line": 5,
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "quantity": "0.001",
+      "date": "2025-03-15",
+      "value": "64.00"
+    }
+  ],
+  "remaining_lots": [
+    {
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "quantity": "0.0199",
+      "basis": "179.10",
+      "acquired": "2024-03-05",
+      "basis_unknown": false
+    },
+    {
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "quantity": "0.001",
+      "basis": "64.00",
+      "acquired": "2025-03-15",
+      "basis_unknown": false
+    },
+    {
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-WALLET-2",
+      "quantity": "250",
+      "basis": "250.00",
+      "acquired": "2024-08-01",
+      "basis_unknown": false
+    }
+  ],
+  "adjusted_away_basis": "0.00",
+  "issues": [
+    {
+      "kind": "InsufficientLots",
+      "line": 6,
+      "date": "2025-04-20",
+      "asset": "FAKEA",
+      "wallet": "FAKE-EXCHANGE-1",
+      "short_by": "0.00001"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 7,
+      "date": "2025-05-01",
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-EXCHANGE-1",
+      "short_by": "250"
+    }
+  ]
+}

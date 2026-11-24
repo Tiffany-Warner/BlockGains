@@ -1,20 +1,352 @@
-<resources>
+<!-- TypographyDashes: the flagged strings contain ISO dates (2025-01-01), not ranges. -->
+<resources xmlns:tools="http://schemas.android.com/tools" tools:ignore="TypographyDashes">
     <string name="app_name">BlockGains</string>
-    <string name="upload_title">Upload Transaction Files</string>
-    <string name="upload_description">Upload CSV files containing your buy and sell transactions to calculate capital gains</string>
-    <string name="buy_transactions">Buy Transactions</string>
-    <string name="sell_transactions">Sell Transactions</string>
-    <string name="calculate_button">Calculate Capital Gains</string>
-    <string name="choose_file">Choose File</string>
-    <string name="change_file">Change File</string>
-    <string name="selected_file">Selected: %1$s</string>
-    <string name="capital_gains_report">Capital Gains Report</string>
-    <string name="tax_year">Tax Year: %1$d</string>
-    <string name="total_capital_gain">Total Capital Gain</string>
-    <string name="total_capital_loss">Total Capital Loss</string>
-    <string name="short_term">Short-Term</string>
-    <string name="long_term">Long-Term</string>
-    <string name="taxable_events">Taxable Events (%1$d)</string>
-    <string name="error_title">Error</string>
-    <string name="loading">Loading...</string>
+
+    <!-- Navigation and common actions -->
+    <string name="nav_summary">Summary</string>
+    <string name="nav_transactions">Transactions</string>
+    <string name="nav_import_export">Import / Export</string>
+    <string name="action_settings">Settings</string>
+    <string name="action_back">Back</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_add">Add</string>
+    <string name="action_rename">Rename</string>
+    <string name="action_review">Review</string>
+    <string name="action_import_transactions">Import transactions</string>
+    <string name="loading">Loading…</string>
+    <string name="disclaimer">Estimate for personal records, not tax advice.</string>
+    <string name="settings_disclaimer_body">Check results against your 1099-DA or 1099-B and a tax professional before filing.</string>
+
+    <!-- Asset-class filter -->
+    <string name="filter_all">All</string>
+    <string name="filter_crypto">Crypto</string>
+    <string name="filter_stocks">Stocks</string>
+
+    <!-- Terms and markers -->
+    <string name="term_short">Short-term</string>
+    <string name="term_long">Long-term</string>
+    <string name="term_mixed">Mixed</string>
+    <string name="basis_unknown_marker">Unknown basis</string>
+
+    <!-- Transaction types -->
+    <string name="type_buy">Buy</string>
+    <string name="type_sell">Sell</string>
+    <string name="type_swap">Swap</string>
+    <string name="type_income">Income</string>
+    <string name="type_transfer">Transfer</string>
+    <string name="type_transfer_fee">Transfer fee</string>
+    <string name="type_opening">Opening</string>
+    <string name="type_adjust">Adjustment</string>
+
+    <!-- Summary -->
+    <string name="summary_year">%1$d</string>
+    <string name="summary_year_picker_cd">Tax year %1$d. Change year</string>
+    <string name="summary_net_gain">Net capital gain</string>
+    <string name="summary_net_loss">Net capital loss</string>
+    <plurals name="summary_event_count">
+        <item quantity="one">%d taxable event</item>
+        <item quantity="other">%d taxable events</item>
+    </plurals>
+    <string name="summary_short_term">Short-term</string>
+    <string name="summary_long_term">Long-term</string>
+    <string name="summary_income">Ordinary income</string>
+    <string name="summary_income_hint">Staking, rewards, airdrops</string>
+    <string name="summary_card_cd">%1$s, %2$s. Show transactions</string>
+    <plurals name="issues_banner_title">
+        <item quantity="one">%d issue needs attention</item>
+        <item quantity="other">%d issues need attention</item>
+    </plurals>
+    <plurals name="export_shortfall_title">
+        <item quantity="one">%1$d unresolved shortfall in your records up to %2$d</item>
+        <item quantity="other">%1$d unresolved shortfalls in your records up to %2$d</item>
+    </plurals>
+    <string name="export_shortfall_body">Some sales, swaps, transfers or adjustments used more units than were available. Sold or swapped units without a matching lot count as short-term with $0 basis, so gains in these exports may be overstated. The PDF report shows this warning on page 1.</string>
+    <string name="issues_banner_body">Some records couldn\'t be used or don\'t add up, so totals may be off.</string>
+    <string name="loss_limit_note">A net capital loss offsets at most $3,000 of other income per year ($1,500 if married filing separately). The rest carries forward. BlockGains doesn\'t track carryovers yet.</string>
+    <string name="summary_empty_title">No transactions yet</string>
+    <string name="summary_empty_body">Import your buys and sells to see gains, losses and income by tax year.</string>
+
+    <!-- Transactions -->
+    <string name="tab_taxable_events">Taxable events</string>
+    <string name="tab_all_transactions">All transactions</string>
+    <string name="events_empty_title">No taxable events in %1$d</string>
+    <string name="events_empty_body">Sales, swaps and transfer fees from this year show up here.</string>
+    <string name="all_empty_title">No transactions yet</string>
+    <string name="all_empty_body">Imported records show up here.</string>
+    <string name="filters_no_match">Nothing matches these filters</string>
+    <string name="filters_clear">Clear filters</string>
+    <string name="filter_type">Type</string>
+    <string name="filter_asset">Asset</string>
+    <string name="filter_wallet">Wallet</string>
+    <string name="filter_any">Any</string>
+    <string name="search_notes">Search notes</string>
+    <string name="search_clear_cd">Clear search</string>
+    <string name="label_proceeds">Proceeds</string>
+    <!-- Prefix on a mixed sale's row under a term filter, e.g. "Short-term part:" -->
+    <string name="label_term_part">%1$s part:</string>
+    <string name="label_basis">Cost basis</string>
+    <string name="label_gain">Gain/loss</string>
+    <string name="label_fees">Fees</string>
+    <string name="label_selling_fee">Selling fee</string>
+    <string name="selling_fee_supporting">Subtracted from proceeds</string>
+    <string name="basis_includes_buy_fee">Includes buy fee</string>
+    <string name="transfer_fee_event_title">Network fee for transfer on %1$s</string>
+    <string name="label_date_sold">Date sold</string>
+    <string name="label_date">Date</string>
+    <string name="label_asset_class">Asset class</string>
+    <string name="label_wallet">Wallet</string>
+    <string name="label_quantity">Quantity</string>
+    <string name="label_price">Price per unit</string>
+    <string name="label_total">Total (USD)</string>
+    <string name="label_received">Received</string>
+    <string name="label_to_wallet">To wallet</string>
+    <string name="label_acquired">Acquired</string>
+    <string name="label_note">Note</string>
+    <string name="label_amount_received">Amount received</string>
+    <string name="label_amount_sent">Amount sent</string>
+    <string name="label_network_fee">Network fee</string>
+    <string name="label_network_fee_value">Network fee value</string>
+    <string name="network_fee_helper">The coins spent on the fee count as sold, so they can have a small gain or loss.</string>
+    <string name="view_fee_event">View the fee\'s taxable event</string>
+    <string name="transfer_fee_same_asset">Sent %1$s · fee %2$s · received %3$s</string>
+    <string name="transfer_fee_other_asset">Received %1$s · fee %2$s %3$s</string>
+    <string name="quantity_asset_transfer_fee">%1$s %2$s (transfer fee)</string>
+    <string name="arrow_pair">%1$s → %2$s</string>
+    <string name="quantity_asset">%1$s %2$s</string>
+
+    <!-- Event and transaction detail -->
+    <string name="event_detail_title">Taxable event</string>
+    <string name="transaction_detail_title">Transaction</string>
+    <string name="rule_universal">FIFO across all wallets (disposals before 2025)</string>
+    <string name="rule_per_wallet">FIFO within %1$s (2025 and later)</string>
+    <string name="rule_label">Matching rule</string>
+    <string name="swap_received">Swapped for %1$s</string>
+    <plurals name="matched_lots">
+        <item quantity="one">Matched lot (%1$d)</item>
+        <item quantity="other">Matched lots (%1$d)</item>
+    </plurals>
+    <string name="lot_acquired">Acquired %1$s</string>
+    <string name="date_unknown">Unknown</string>
+    <string name="lot_wallet">From %1$s</string>
+    <string name="detail_not_found">This record no longer exists.</string>
+    <string name="yes">Yes</string>
+
+    <!-- Issues -->
+    <string name="issues_title">Issues in %1$d</string>
+    <string name="issues_empty">No issues for %1$d.</string>
+    <string name="issue_fix_label">Suggested fix</string>
+    <string name="issue_insufficient_title">Not enough %1$s for this %2$s</string>
+    <string name="issue_insufficient_body">On %1$s, %2$s needed %3$s but only %4$s were available (short by %5$s).</string>
+    <string name="issue_insufficient_body_pooled">On %1$s, %2$s needed %3$s but only %4$s were available (short by %5$s). Before 2025, lots are pooled across all wallets, so the available amount is what all wallets held together.</string>
+    <string name="issue_insufficient_fix">Look for a missing buy, transfer or opening record before this date, or a typo in the quantity. Until then, units sold, swapped or spent on a transfer fee without a matching lot count as short-term with $0 basis.</string>
+    <string name="issue_mismatch_title">Opening positions don\'t match for %1$s</string>
+    <string name="issue_mismatch_body">On 2025-01-01 your records show %1$s held; opening records add up to %2$s.</string>
+    <string name="issue_mismatch_fix">Open the Opening positions helper and assign each lot to a wallet. If the difference is untracked fee dust, add a negative ADJUST record before 2025-01-01.</string>
+    <string name="issue_zero_title">$0 buy of %1$s</string>
+    <string name="issue_zero_body">A buy of %1$s on %2$s in %3$s has no price and isn\'t marked as unknown basis.</string>
+    <string name="issue_zero_fix">If it was a reward or airdrop, record it as INCOME with its value. If the $0 basis is intentional, set basis_unknown to true.</string>
+    <string name="issue_invalid_title">Record skipped</string>
+    <string name="issue_location_line">Line %1$d</string>
+    <string name="issue_location_file_line">%1$s, line %2$d</string>
+    <string name="issue_location_record">%1$s record on %2$s</string>
+
+    <!-- Invalid row reasons (message includes the fix) -->
+    <string name="reason_missing_column">Missing column(s): %1$s. Check the header row.</string>
+    <string name="reason_missing_field">%1$s is empty.</string>
+    <string name="reason_unknown_type">Unknown type \"%1$s\". Use BUY, SELL, SWAP, INCOME, TRANSFER, OPENING or ADJUST.</string>
+    <string name="reason_unknown_asset_class">Unknown asset class \"%1$s\". Use CRYPTO or STOCK.</string>
+    <string name="reason_bad_date">Can\'t read the date in %1$s. Use yyyy-MM-dd or M/d/yyyy.</string>
+    <string name="reason_bad_number">Can\'t read the number in %1$s.</string>
+    <string name="reason_bad_boolean">basis_unknown must be true or false.</string>
+    <string name="reason_blank_asset">The asset is blank.</string>
+    <string name="reason_blank_wallet">The wallet is blank.</string>
+    <string name="reason_quantity_not_positive">The quantity must be more than 0.</string>
+    <string name="reason_adjust_not_negative">ADJUST quantities must be negative. Use a BUY with basis_unknown for found coins.</string>
+    <string name="reason_missing_value">A price or total is required%1$s.</string>
+    <string name="reason_negative_value">Prices and totals can\'t be negative.</string>
+    <string name="reason_price_total_mismatch">price_usd × quantity and total_usd differ by more than $0.01. Keep one or fix the other.</string>
+    <string name="reason_negative_fee">The fee can\'t be negative.</string>
+    <string name="reason_fee_not_allowed">fee_usd applies only to BUY, SELL, SWAP and a TRANSFER\'s network fee. Remove the fee.</string>
+    <string name="reason_network_fee_not_allowed">fee_asset and fee_quantity apply only to TRANSFER. Remove them.</string>
+    <string name="reason_network_fee_missing_quantity">A transfer fee is paid in coins: add fee_quantity (and fee_asset if the fee wasn\'t paid in the transferred coin).</string>
+    <string name="reason_network_fee_quantity_not_positive">fee_quantity must be positive.</string>
+    <string name="reason_network_fee_missing_value">A network fee needs fee_usd: the USD value of the fee coins at the time.</string>
+    <string name="reason_swap_missing_to_asset">A SWAP needs to_asset (what was received).</string>
+    <string name="reason_swap_missing_to_quantity">A SWAP needs to_quantity greater than 0.</string>
+    <string name="reason_swap_same_asset">A SWAP must receive a different asset.</string>
+    <string name="reason_transfer_missing_to_wallet">A TRANSFER needs to_wallet.</string>
+    <string name="reason_transfer_same_wallet">A TRANSFER must go to a different wallet.</string>
+    <string name="reason_opening_wrong_date">OPENING records must be dated 2025-01-01.</string>
+    <string name="reason_opening_missing_acquired">OPENING records need acquired_date (the original purchase date).</string>
+    <string name="reason_opening_acquired_after">acquired_date must be on or before 2025-01-01.</string>
+    <string name="reason_in_column">" (%1$s)"</string>
+
+    <!-- Import / Export -->
+    <string name="tab_import">Import</string>
+    <string name="tab_export">Export</string>
+    <string name="unified_intro">Any mix of assets, wallets and record types.</string>
+    <string name="unified_file">Unified CSV file</string>
+    <string name="choose_file">Choose file</string>
+    <string name="change_file">Change</string>
+    <string name="no_file">No file chosen</string>
+    <string name="preview_import">Preview import</string>
+    <string name="template_title">Blank template</string>
+    <string name="template_body">A unified CSV with the header and commented example rows. Totals are before fees; put fees in fee_usd.</string>
+    <string name="template_button">Download template</string>
+    <string name="template_saved">Template saved</string>
+    <string name="opening_card_title">Opening positions (2025-01-01)</string>
+    <string name="opening_card_body">Assign what you held on Jan 1, 2025 to wallets. Per-wallet matching starts from these.</string>
+    <string name="opening_card_button">Open helper</string>
+    <string name="import_read_error">Couldn\'t read that file. Make sure it\'s a CSV.</string>
+    <string name="file_save_error">Couldn\'t save the file.</string>
+
+    <!-- Export -->
+    <string name="export_empty_title">Nothing to export yet</string>
+    <string name="export_empty_body">Import your records first. Exports and the full backup show up here once there are transactions.</string>
+    <string name="export_year_scope">Tax-year exports</string>
+    <string name="export_scope_note">Year exports use this year and asset class, so their totals match the Summary.</string>
+    <string name="export_events_title">Taxable events (CSV)</string>
+    <string name="export_events_body">One row per matched lot</string>
+    <string name="export_8949_title">Form 8949 (CSV)</string>
+    <string name="export_8949_body">Part I short-term and Part II long-term, with totals</string>
+    <string name="export_income_title">Ordinary income (CSV)</string>
+    <string name="export_income_body">Staking, rewards and airdrops</string>
+    <string name="export_pdf_title">Year report (PDF)</string>
+    <string name="export_pdf_body">Totals and every taxable event, ready to print</string>
+    <string name="export_records_header">All records</string>
+    <string name="export_all_title">All transactions (CSV)</string>
+    <string name="export_all_body">Unified format; imports back into BlockGains</string>
+    <string name="export_backup_title">Full backup (JSON)</string>
+    <string name="export_backup_body">Records and settings, to restore later or on a new phone</string>
+    <string name="export_saved">Saved</string>
+    <string name="restore_title">Restore from backup</string>
+    <string name="restore_body">Replaces all current data</string>
+    <string name="restore_confirm_title">Replace all data?</string>
+    <string name="restore_exported_on">Backup from %1$s</string>
+    <plurals name="restore_record_count">
+        <item quantity="one">%d record</item>
+        <item quantity="other">%d records</item>
+    </plurals>
+    <string name="restore_warning">Everything currently in BlockGains will be replaced. Export a backup first if you might need it.</string>
+    <string name="restore_confirm">Replace all data</string>
+    <string name="restore_read_error">That file isn\'t a BlockGains backup.</string>
+    <plurals name="restored_message">
+        <item quantity="one">Restored %d record</item>
+        <item quantity="other">Restored %d records</item>
+    </plurals>
+
+    <!-- Import preview -->
+    <string name="preview_title">Review import</string>
+    <string name="preview_to_add">To add</string>
+    <!-- Count tiles: the number is shown above the label. -->
+    <plurals name="preview_duplicates_tile">
+        <item quantity="one">Duplicate skipped</item>
+        <item quantity="other">Duplicates skipped</item>
+    </plurals>
+    <plurals name="preview_problems_tile">
+        <item quantity="one">Row with problems</item>
+        <item quantity="other">Rows with problems</item>
+    </plurals>
+    <string name="preview_problems">Rows with problems</string>
+    <string name="preview_date_range">%1$s – %2$s</string>
+    <string name="preview_nothing">Nothing new to import.</string>
+    <plurals name="preview_confirm">
+        <item quantity="one">Import %d transaction</item>
+        <item quantity="other">Import %d transactions</item>
+    </plurals>
+    <string name="preview_zero_title">$0 buys to resolve</string>
+    <string name="preview_zero_body">Was each of these an untracked or unknown-basis lot, or income?</string>
+    <string name="zero_unknown_basis">Unknown basis ($0)</string>
+    <string name="zero_income">Income</string>
+    <string name="zero_fmv">Value per unit (USD)</string>
+    <string name="zero_fmv_error">Enter a value of 0 or more</string>
+    <string name="preview_expired">Nothing to review. Start the import again.</string>
+    <plurals name="preview_scientific_note">
+        <item quantity="one">%d value was written in scientific notation; spreadsheet apps can round these, so check it.</item>
+        <item quantity="other">%d values were written in scientific notation; spreadsheet apps can round these, so check them.</item>
+    </plurals>
+    <string name="preview_problems_note">These rows won\'t be imported. Fix them in the file and import again; already imported rows are skipped as duplicates.</string>
+    <plurals name="imported_message">
+        <item quantity="one">%d transaction imported</item>
+        <item quantity="other">%d transactions imported</item>
+    </plurals>
+
+    <!-- Opening positions -->
+    <string name="opening_title">Opening positions</string>
+    <string name="opening_intro">From 2025-01-01 lots are matched wallet by wallet. Assign each lot you held then to the wallet it was in; the original date and basis carry over.</string>
+    <string name="opening_empty_title">Nothing held on 2025-01-01</string>
+    <string name="opening_empty_body">No records before 2025 left anything to assign.</string>
+    <string name="opening_lot_title">Acquired %1$s</string>
+    <!-- Quantity is a decimal: "one" only when it is exactly 1. -->
+    <plurals name="opening_lot_body">
+        <item quantity="one">%1$s unit · basis %2$s</item>
+        <item quantity="other">%1$s units · basis %2$s</item>
+    </plurals>
+    <string name="opening_split">Split</string>
+    <string name="opening_remove_cd">Remove this wallet</string>
+    <string name="opening_unassigned">%1$s not assigned</string>
+    <string name="opening_over">%1$s more than the lot</string>
+    <string name="opening_blank_wallet">Pick a wallet for every row</string>
+    <string name="opening_non_positive">Quantities must be more than 0</string>
+    <string name="opening_save">Save %1$s</string>
+    <string name="opening_saved">Saved opening positions for %1$s</string>
+    <string name="opening_saved_records">Saved: %1$s in opening records</string>
+    <string name="opening_not_saved">Not saved yet. Until you save, everything goes to the default wallet.</string>
+    <string name="opening_orphans_title">Opening records with nothing left to assign</string>
+    <string name="opening_orphans_body">%1$s has opening records totaling %2$s, but your records before 2025 leave none held on 2025-01-01.</string>
+    <string name="opening_remove_saved">Remove these records</string>
+
+    <!-- Settings -->
+    <string name="settings_default_wallet">Default wallet</string>
+    <string name="settings_default_wallet_body">Gets anything you held on 2025-01-01 that has no opening records.</string>
+    <string name="settings_wallets">Wallets</string>
+    <string name="settings_add_wallet">Add wallet</string>
+    <string name="settings_wallet_hint">Use labels, not real addresses.</string>
+    <string name="settings_wallet_label">Wallet label</string>
+    <string name="settings_rename_wallet">Rename wallet</string>
+    <string name="settings_rename_body">Updates every record that uses this wallet.</string>
+    <string name="settings_rename_cd">Rename %1$s</string>
+    <string name="settings_wallet_exists">That label is already in use.</string>
+    <string name="settings_theme">Theme</string>
+    <string name="theme_system">System default</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="settings_dynamic_color">Use wallpaper colors</string>
+    <string name="settings_dynamic_color_body">Match the app to your wallpaper instead of its own coffee palette.</string>
+    <string name="settings_about">About</string>
+    <string name="settings_version">Version %1$s</string>
+    <string name="settings_storage">Data is stored only on this device.</string>
+    <string name="settings_license">License: GPL-3.0-or-later</string>
+    <string name="settings_view_license">View license</string>
+    <string name="license_title">GNU GPL v3.0</string>
+
+    <!-- Settings → Data -->
+    <string name="settings_data">Data</string>
+    <string name="settings_data_body">Deleting can\'t be undone. Make a Full backup (JSON) first if you might want this data back.</string>
+    <string name="delete_transactions_button">Delete all transactions</string>
+    <string name="delete_transactions_button_cd">Delete all transactions. Asks you to confirm twice.</string>
+    <string name="delete_all_button">Delete all data</string>
+    <string name="delete_all_button_cd">Delete all data and reset settings. Asks you to confirm twice.</string>
+    <string name="delete_transactions_title">Delete all transactions?</string>
+    <string name="delete_all_title">Delete all data?</string>
+    <plurals name="delete_transactions_body">
+        <item quantity="one">This deletes %1$s transaction. Your default wallet, wallet labels and theme stay.</item>
+        <item quantity="other">This deletes %1$s transactions. Your default wallet, wallet labels and theme stay.</item>
+    </plurals>
+    <plurals name="delete_all_body">
+        <item quantity="one">This deletes %1$s transaction and resets all settings (default wallet, wallet labels, theme, wallpaper colors), like a fresh install.</item>
+        <item quantity="other">This deletes %1$s transactions and resets all settings (default wallet, wallet labels, theme, wallpaper colors), like a fresh install.</item>
+    </plurals>
+    <string name="delete_cannot_undo">This can\'t be undone.</string>
+    <string name="delete_back_up_first">Back up first</string>
+    <string name="delete_back_up_first_cd">Back up first: save a Full backup (JSON) file</string>
+    <string name="action_continue">Continue</string>
+    <string name="delete_type_title">Type DELETE to confirm</string>
+    <string name="delete_type_body">Type DELETE in capital letters to turn on the Delete button.</string>
+    <string name="delete_type_label">Type DELETE</string>
+    <string name="delete_confirm_word" translatable="false">DELETE</string>
+    <string name="action_delete">Delete</string>
+    <string name="delete_button_cd">Delete permanently</string>
+    <string name="delete_done_transactions">All transactions deleted</string>
+    <string name="delete_done_all">All data deleted and settings reset</string>
 </resources>

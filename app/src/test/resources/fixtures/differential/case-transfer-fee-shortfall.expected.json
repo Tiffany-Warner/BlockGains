@@ -1,0 +1,176 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2025": {
+      "short_term": {
+        "proceeds": "13.70",
+        "basis": "1.00",
+        "gain": "12.70",
+        "count": 3
+      },
+      "long_term": {
+        "proceeds": "8.00",
+        "basis": "8.00",
+        "gain": "0.00",
+        "count": 1
+      },
+      "net_gain": "12.70",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    }
+  },
+  "events": [
+    {
+      "line": 3,
+      "lot_line": 2,
+      "kind": "transfer_fee",
+      "asset": "FAKEB",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "wallet",
+      "quantity": "0.004",
+      "acquired": "2023-01-01",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-03-01",
+      "term": "LT",
+      "proceeds": "8.00",
+      "basis": "8.00",
+      "gain": "0.00"
+    },
+    {
+      "line": 3,
+      "lot_line": null,
+      "kind": "transfer_fee",
+      "asset": "FAKEB",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "wallet",
+      "quantity": "0.006",
+      "acquired": null,
+      "unmatched": true,
+      "basis_unknown": true,
+      "disposed": "2025-03-01",
+      "term": "ST",
+      "proceeds": "12.00",
+      "basis": "0.00",
+      "gain": "12.00"
+    },
+    {
+      "line": 5,
+      "lot_line": 4,
+      "kind": "transfer_fee",
+      "asset": "FAKEC",
+      "wallet": "FAKE-WALLET-2",
+      "scope": "wallet",
+      "quantity": "0.1",
+      "acquired": "2024-06-01",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2025-04-01",
+      "term": "ST",
+      "proceeds": "1.20",
+      "basis": "1.00",
+      "gain": "0.20"
+    },
+    {
+      "line": 6,
+      "lot_line": null,
+      "kind": "transfer_fee",
+      "asset": "FAKEC",
+      "wallet": "FAKE-WALLET-2",
+      "scope": "wallet",
+      "quantity": "0.05",
+      "acquired": null,
+      "unmatched": true,
+      "basis_unknown": true,
+      "disposed": "2025-05-01",
+      "term": "ST",
+      "proceeds": "0.50",
+      "basis": "0.00",
+      "gain": "0.50"
+    }
+  ],
+  "income": [],
+  "remaining_lots": [
+    {
+      "asset": "FAKEC",
+      "wallet": "FAKE-EXCHANGE-1",
+      "quantity": "9.9",
+      "basis": "99.00",
+      "acquired": "2024-06-01",
+      "basis_unknown": false
+    }
+  ],
+  "adjusted_away_basis": "0.00",
+  "issues": [
+    {
+      "kind": "InvalidRow",
+      "line": 7,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "a TRANSFER fee needs fee_quantity"
+    },
+    {
+      "kind": "InvalidRow",
+      "line": 8,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "fee_quantity needs fee_usd (the fee coins' USD value)"
+    },
+    {
+      "kind": "InvalidRow",
+      "line": 9,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "fee_asset/fee_quantity apply only to TRANSFER"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 3,
+      "date": "2025-03-01",
+      "asset": "FAKEB",
+      "wallet": "FAKE-WALLET-1",
+      "short_by": "0.006"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 3,
+      "date": "2025-03-01",
+      "asset": "FAKEUSD",
+      "wallet": "FAKE-WALLET-1",
+      "short_by": "50"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 5,
+      "date": "2025-04-01",
+      "asset": "FAKEC",
+      "wallet": "FAKE-WALLET-2",
+      "short_by": "0.05"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 6,
+      "date": "2025-05-01",
+      "asset": "FAKEC",
+      "wallet": "FAKE-WALLET-2",
+      "short_by": "0.05"
+    },
+    {
+      "kind": "InsufficientLots",
+      "line": 6,
+      "date": "2025-05-01",
+      "asset": "FAKEC",
+      "wallet": "FAKE-WALLET-2",
+      "short_by": "1"
+    }
+  ]
+}

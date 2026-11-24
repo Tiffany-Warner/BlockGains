@@ -1,0 +1,7 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-10,FAKEB,CRYPTO,FAKE-WALLET-1,2,100.00,,1.50,,,,,,
+SWAP,2023-03-01,FAKEB,CRYPTO,FAKE-WALLET-1,2,,250.00,,FAKEUSD,250,,,,swap before 2025
+OPENING,2025-01-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,150,,150.00,,,,,2023-03-01,,only part carried over
+OPENING,2025-01-01,FAKEUSD,CRYPTO,FAKE-EXCHANGE-1,90,,90.00,,,,,2023-03-01,,
+SELL,2025-04-01,FAKEUSD,CRYPTO,FAKE-EXCHANGE-1,90,1.00,,,,,,,,
+SELL,2025-05-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,150,1.01,,,,,,,,

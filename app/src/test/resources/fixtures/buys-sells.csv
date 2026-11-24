@@ -1,0 +1,11 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,09/04/2021,FAKEB,CRYPTO,FAKE-WALLET-1,3.521,$141.29,,,,,,,,,,
+SELL,12/8/2023,FAKEB,CRYPTO,FAKE-WALLET-1,1.3653,2210.41,,,,,,,,,,
+BUY,2/10/2023,FAKEB,CRYPTO,FAKE-WALLET-1,1.5,$0.00,,,,,,,,,,
+BUY,1/5/2022,FAKEB,CRYPTO,FAKE-WALLET-1,0.75,"$3,012.50",,,,,,,,,,
+SELL,6/30/2021,FAKEB,CRYPTO,FAKE-WALLET-1,0.5,1890.00,,,,,,,,,,
+
+BUY,12/01/2020,FAKEB,CRYPTO,FAKE-WALLET-1,2.123456789,$612.10,,,,,,,,,,
+BUY,bad-date,FAKEB,CRYPTO,FAKE-WALLET-1,1,$10.00,,,,,,,,,,
+BUY,4/1/2024,FAKEB,CRYPTO,FAKE-WALLET-1,,$100.00,,,,,,,,,,
+SELL,2024-03-02,FAKEB,CRYPTO,FAKE-WALLET-1,2,3500,,,,,,,,,,

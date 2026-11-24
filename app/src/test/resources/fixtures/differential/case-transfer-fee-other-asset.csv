@@ -1,0 +1,7 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+OPENING,2025-01-01,FAKEA,CRYPTO,FAKE-WALLET-1,0.02,,180.00,,,,,,,2024-03-05,,
+OPENING,2025-01-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,500,,500.00,,,,,,,2024-08-01,,
+TRANSFER,2025-03-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,500,,,6.40,FAKEA,0.0001,,,FAKE-EXCHANGE-1,,,fee paid in FAKEA
+INCOME,2025-03-15,FAKEA,CRYPTO,FAKE-WALLET-1,0.001,64000.00,,,,,,,,,,
+TRANSFER,2025-04-20,FAKEUSD,CRYPTO,FAKE-EXCHANGE-1,250,,,0.00,FAKEA,0.00001,,,FAKE-WALLET-2,,,shortfall in FAKEA at the exchange
+SELL,2025-05-01,FAKEUSD,CRYPTO,FAKE-EXCHANGE-1,500,1.00,,,,,,,,,,

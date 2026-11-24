@@ -1,0 +1,51 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2024": {
+      "short_term": {
+        "proceeds": "0.00",
+        "basis": "0.00",
+        "gain": "0.00",
+        "count": 0
+      },
+      "long_term": {
+        "proceeds": "300.00",
+        "basis": "150.00",
+        "gain": "150.00",
+        "count": 1
+      },
+      "net_gain": "150.00",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    }
+  },
+  "events": [
+    {
+      "line": 5,
+      "lot_line": 2,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1.5",
+      "acquired": "2023-01-10",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "300.00",
+      "basis": "150.00",
+      "gain": "150.00"
+    }
+  ],
+  "income": [],
+  "remaining_lots": [],
+  "adjusted_away_basis": "50.00",
+  "issues": []
+}

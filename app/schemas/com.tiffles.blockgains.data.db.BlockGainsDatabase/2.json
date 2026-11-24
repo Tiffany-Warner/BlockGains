@@ -1,0 +1,143 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "a6b110b4a56bbf836ab992489a937595",
+    "entities": [
+      {
+        "tableName": "transactions",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `type` TEXT NOT NULL, `date` TEXT NOT NULL, `asset` TEXT NOT NULL, `asset_class` TEXT NOT NULL, `wallet` TEXT NOT NULL, `quantity` TEXT NOT NULL, `price_usd` TEXT, `total_usd` TEXT, `fee_usd` TEXT, `fee_asset` TEXT, `fee_quantity` TEXT, `to_asset` TEXT, `to_quantity` TEXT, `to_wallet` TEXT, `acquired_date` TEXT, `basis_unknown` INTEGER NOT NULL, `note` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "type",
+            "columnName": "type",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "date",
+            "columnName": "date",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "asset",
+            "columnName": "asset",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "assetClass",
+            "columnName": "asset_class",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wallet",
+            "columnName": "wallet",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "quantity",
+            "columnName": "quantity",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "priceUsd",
+            "columnName": "price_usd",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "totalUsd",
+            "columnName": "total_usd",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "feeUsd",
+            "columnName": "fee_usd",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "feeAsset",
+            "columnName": "fee_asset",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "feeQuantity",
+            "columnName": "fee_quantity",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "toAsset",
+            "columnName": "to_asset",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "toQuantity",
+            "columnName": "to_quantity",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "toWallet",
+            "columnName": "to_wallet",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "acquiredDate",
+            "columnName": "acquired_date",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "basisUnknown",
+            "columnName": "basis_unknown",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_transactions_date",
+            "unique": false,
+            "columnNames": [
+              "date"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_transactions_date` ON `${TABLE_NAME}` (`date`)"
+          },
+          {
+            "name": "index_transactions_asset",
+            "unique": false,
+            "columnNames": [
+              "asset"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_transactions_asset` ON `${TABLE_NAME}` (`asset`)"
+          }
+        ]
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'a6b110b4a56bbf836ab992489a937595')"
+    ]
+  }
+}

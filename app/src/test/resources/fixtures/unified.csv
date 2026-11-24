@@ -1,0 +1,16 @@
+# Made-up records for importer tests.
+ Type ,DATE,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-05,fakeb,CRYPTO,FAKE-WALLET-2,10,20.00,,,,,,,,
+OPENING,2025-01-01,FAKEB,CRYPTO,FAKE-WALLET-2,10,20.00,,,,,,2023-01-05,,carried from universal pool
+SWAP,2025-03-10,FAKEB,CRYPTO,FAKE-WALLET-2,10,,1500.00,,FAKEUSD,1500,,,,on-chain swap
+TRANSFER,2025-03-12,FAKEUSD,CRYPTO,FAKE-WALLET-2,1500,,,,,,FAKE-EXCHANGE-1,,,
+SELL,2025-03-15,FAKEUSD,,FAKE-EXCHANGE-1,1500,1.00,,,,,,,,
+INCOME,2025-02-01,FAKEB,CRYPTO,FAKE-EXCHANGE-1,0.5,100.00,,,,,,,,staking
+ADJUST,2025-06-01,FAKEB,CRYPTO,FAKE-WALLET-1,-0.0012,,,,,,,,,fee dust
+BUY,2024-07-04,FAKEA,crypto,FAKE-EXCHANGE-1,0.012345678912,"$1,234.56",,"$1.50",,,,,,"note with ""quotes"", and a comma"
+BUY,2022-07-15,FAKEB,CRYPTO,FAKE-WALLET-1,1.5,0,,,,,,,true,
+# a comment in the middle
+FOO,2025-01-01,FAKEB,CRYPTO,FAKE-WALLET-1,1,1,,,,,,,,
+SELL,2025-13-01,FAKEB,CRYPTO,FAKE-WALLET-1,1,1,,,,,,,,
+BUY,2025-01-02,FAKEA,CRYPTO,FAKE-WALLET-1,1,,,,,,,,,
+BUY,2025-01-02,FAKEA,CRYPTO,FAKE-WALLET-1,1,abc,,,,,,,,

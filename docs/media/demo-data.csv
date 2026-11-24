@@ -1,0 +1,15 @@
+# BlockGains README demo data. Every amount, price and date is made up.
+# Import demo-seed.csv first: line 5 (the 2023-01-15 BTC buy) is then a skipped duplicate. Line 12 has an invalid date on purpose.
+# Expected after splitting the 2025-01-01 BTC (lot of 2023-01-15: 0.5 WALLET-1, 0.5 EXCHANGE-1; lot of 2023-06-01: WALLET-1): 2023 income $800.00; 2024 ST +$3,984.00, LT +$2,997.00, net +$6,981.00; 2025 ST $0.00, LT +$38,997.00, net +$38,997.00, income $300.00. Before the split: 2025 ST +$45,000.00, LT +$3,997.00 and one shortfall issue (BTC, EXCHANGE-1).
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-15,BTC,CRYPTO,WALLET-1,1,20000,,,,,,,,,,
+BUY,2023-03-10,ETH,CRYPTO,EXCHANGE-1,10,1500,,15,,,,,,,,
+BUY,2023-06-01,BTC,CRYPTO,WALLET-1,1,30000,,,,,,,,,,
+INCOME,2023-09-01,ETH,CRYPTO,EXCHANGE-1,0.5,1600,,,,,,,,,,Staking reward
+SELL,2024-02-01,ETH,CRYPTO,EXCHANGE-1,4,2500,,10,,,,,,,,
+SWAP,2024-05-01,ETH,CRYPTO,EXCHANGE-1,2,,6000,,,,SOL,50,,,,
+TRANSFER,2024-08-01,BTC,CRYPTO,WALLET-1,0.5,,,,,,,,EXCHANGE-1,,,Move to exchange
+SELL,2025-13-01,BTC,CRYPTO,EXCHANGE-1,0.1,90000,,,,,,,,,,Typo in the date
+SELL,2025-03-01,BTC,CRYPTO,EXCHANGE-1,0.5,90000,,,,,,,,,,
+INCOME,2025-06-01,SOL,CRYPTO,WALLET-1,2,150,,,,,,,,,,Staking reward
+SELL,2025-11-01,ETH,CRYPTO,WALLET-1,2,3500,,,,,,,,,,

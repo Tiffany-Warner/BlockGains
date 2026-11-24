@@ -1,0 +1,5 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-10,FAKEA,CRYPTO,FAKE-WALLET-1,2,100.00,,,,,,,,,,
+ADJUST,2023-02-10,FAKEA,CRYPTO,FAKE-WALLET-1,−0.25,,,,,,,,,,,U+2212 minus
+ADJUST,2023-02-11,FAKEA,CRYPTO,FAKE-WALLET-1,$−0.25,,,,,,,,,,,$ then U+2212
+SELL,2024-06-10,FAKEA,CRYPTO,FAKE-WALLET-1,1.5,200.00,,,,,,,,,,

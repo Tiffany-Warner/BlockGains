@@ -1,0 +1,9 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+BUY,2023-01-10,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,true,
+BUY,2023-01-11,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,YES,
+BUY,2023-01-12,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,y,
+BUY,2023-01-13,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,1,
+BUY,2023-01-14,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,no,false: ZeroPriceBuy
+BUY,2023-01-15,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,0,false: ZeroPriceBuy
+BUY,2023-01-16,FAKEA,CRYPTO,FAKE-WALLET-1,1,0,,,,,,,,,maybe,unrecognized: rejected
+SELL,2024-06-10,FAKEA,CRYPTO,FAKE-WALLET-1,6,10.00,,,,,,,,,,

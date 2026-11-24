@@ -1,0 +1,93 @@
+{
+  "settings": {
+    "method": "FIFO",
+    "cutoff": "2025-01-01",
+    "default_wallet": "FAKE-WALLET-1",
+    "rounding": "HALF_UP to cents, totals from unrounded values"
+  },
+  "years": {
+    "2024": {
+      "short_term": {
+        "proceeds": "0.00",
+        "basis": "0.00",
+        "gain": "0.00",
+        "count": 0
+      },
+      "long_term": {
+        "proceeds": "1234.50",
+        "basis": "300.00",
+        "gain": "934.50",
+        "count": 2
+      },
+      "net_gain": "934.50",
+      "loss_limit_note": false,
+      "ordinary_income": "0.00",
+      "income_count": 0
+    }
+  },
+  "events": [
+    {
+      "line": 7,
+      "lot_line": 2,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1000",
+      "acquired": "2023-01-10",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "493.80",
+      "basis": "150.00",
+      "gain": "343.80"
+    },
+    {
+      "line": 7,
+      "lot_line": 6,
+      "kind": "disposal",
+      "asset": "FAKEA",
+      "wallet": "FAKE-WALLET-1",
+      "scope": "universal",
+      "quantity": "1500",
+      "acquired": "2023-01-14",
+      "unmatched": false,
+      "basis_unknown": false,
+      "disposed": "2024-06-10",
+      "term": "LT",
+      "proceeds": "740.70",
+      "basis": "150.00",
+      "gain": "590.70"
+    }
+  ],
+  "income": [],
+  "remaining_lots": [],
+  "adjusted_away_basis": "0.00",
+  "issues": [
+    {
+      "kind": "InvalidRow",
+      "line": 3,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "bad number in price_usd: '1,5'"
+    },
+    {
+      "kind": "InvalidRow",
+      "line": 4,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "bad number in price_usd: '12,34'"
+    },
+    {
+      "kind": "InvalidRow",
+      "line": 5,
+      "date": null,
+      "asset": null,
+      "wallet": null,
+      "reason": "bad number in price_usd: '1,234E2'"
+    }
+  ]
+}

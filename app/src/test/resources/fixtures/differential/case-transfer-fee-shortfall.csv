@@ -1,0 +1,9 @@
+type,date,asset,asset_class,wallet,quantity,price_usd,total_usd,fee_usd,fee_asset,fee_quantity,to_asset,to_quantity,to_wallet,acquired_date,basis_unknown,note
+OPENING,2025-01-01,FAKEB,CRYPTO,FAKE-WALLET-1,0.004,,8.00,,,,,,,2023-01-01,,
+TRANSFER,2025-03-01,FAKEUSD,CRYPTO,FAKE-WALLET-1,50,,,20.00,FAKEB,0.01,,,FAKE-EXCHANGE-1,,,fee larger than the wallet holds; no FAKEUSD either
+OPENING,2025-01-01,FAKEC,CRYPTO,FAKE-WALLET-2,10,,100.00,,,,,,,2024-06-01,,
+TRANSFER,2025-04-01,FAKEC,CRYPTO,FAKE-WALLET-2,9.95,,,1.20,,0.1,,,FAKE-EXCHANGE-1,,,fee covered; moved units short
+TRANSFER,2025-05-01,FAKEC,CRYPTO,FAKE-WALLET-2,1,,,0.50,,0.05,,,FAKE-EXCHANGE-1,,,wallet already empty: fee slice and both shortfalls
+TRANSFER,2025-05-02,FAKEC,CRYPTO,FAKE-WALLET-2,1,,,0.50,,,,,FAKE-EXCHANGE-1,,,fee_usd without fee_quantity
+TRANSFER,2025-05-03,FAKEC,CRYPTO,FAKE-WALLET-2,1,,,,,0.05,,,FAKE-EXCHANGE-1,,,fee_quantity without fee_usd
+SELL,2025-05-04,FAKEC,CRYPTO,FAKE-EXCHANGE-1,1,12.00,,,FAKEB,,,,,,,fee_asset on a SELL
